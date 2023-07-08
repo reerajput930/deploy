@@ -541,7 +541,6 @@ const CommunityFinalDark = () => {
           return eachElement.postSpace.some((value) =>
             selectedCommunitySpace.includes(value)
           );
-          return false;
         }
       });
       setSpaceFilteredPost(filteredData);

@@ -102,7 +102,25 @@ import DummyTest from "./pages/Dummy Test Page/DummyTest";
 // import BuildAudience from "./pages/New Courses/Courses/BuildAudience";
 import CommunityFinalDark from "./components/Community Dark Mood/Community Final Dark/CommunityFinalDark";
 import Test from "./TestPage/Test";
+import Discover from "./pages/Discover/Discover";
+import Featured from "./pages/Articles/Featured";
+import Accounting from "./pages/Articles/Accounting";
+import Business from "./pages/Articles/Business";
+import Consulting from "./pages/Articles/Consulting";
+import Gaming from "./pages/Articles/Gaming";
+import Design from "./pages/Articles/Design";
+import Enterpreneurship from "./pages/Articles/Enterpreneurship";
+import Finance from "./pages/Articles/Finance";
+import Healthcare from "./pages/Articles/Healthcare";
+import MentorTesting from "./pages/Mentors/MentorTesting";
+import ScheduleTesting from "./pages/Schedule/ScheduleTesting";
+import MentorSearch from "./pages/MentorSearch/MentorSearch";
+import KnowledgeTesting from "./pages/Knowledge/KnowledgeTesting";
+import CheckYourScoreTesting from "./pages/Check Your Score/CheckYourScoreTesting";
+import CourcePageTesting from "./pages/AfterKnowledge/CourcesPage/CourcePageTesting";
+import HomeNotLoggedIn from "./pages/HomeNotLoggedIn/HomeNotLoggedIn";
 import EnterOtpUpdated from "./pages/EnterOtpUpdated/EnterOtpUpdated";
+
 
 
 function App() {
@@ -129,7 +147,7 @@ function App() {
 
   console.log(user);
 
-  return (
+  return(
     <>
       <Toaster />
       <Routes>
@@ -140,6 +158,9 @@ function App() {
             <Route path="/signup" element={<SignupAuthUpdated />}></Route>
 
             <Route path="/login" element={<LoginNew />} />
+            <Route path="/community2" element={<HomeNotLoggedIn />}>
+              <Route path=":postId" element={<SharedCommunityPost />}></Route>
+            </Route>
           </>
         )}
         <Route path="/forgotpassword" element={<ForgotPassword />} />
@@ -161,20 +182,22 @@ function App() {
         <Route path="/startup-review" element={<Review />} />
         <Route path="/startup-verification" element={<Verification />} />
         <Route path="/schedule" element={<Schedule />}></Route>
-        <Route path="/knowledge" element={<Knowledge />}></Route>
+        <Route path="/schedule/:id/:userEmail" element={<ScheduleTesting/>}></Route>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/knowledge" element={<Knowledge />}></Route>
+        {/* <Route path="/knowledge" element={<Knowledge />}></Route> */}
+        <Route path="/knowledge" element={<KnowledgeTesting />}></Route>
         {/* <Route path="/com" element={<BusinessPlanningSlides />}></Route> */}
-        <Route path="/mentors" element={<MentorsNew />}></Route>
+        <Route path="/mentors" element={<MentorTesting/>}></Route>
+        <Route path="/mentors-search/:category" element={<MentorSearch/>}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>
         <Route path="/mentordetails" element={<MentorMoreDetails />}></Route>
         <Route path="/funding" element={<Funding />}></Route>
         <Route path="/fundingform" element={<FundingForm />}></Route>
         <Route path="/mentor-profile" element={<MentorProfile />}></Route>
-        <Route path="/community" element={<Test/>}>
-        {/* <Route path="/community" element={<CommunityFinalDark />}> */}
-        {/* <Route path="/community" element={<CommunityFinal />}> */}
+        <Route path="/community" element={<Test />}>
+          {/* <Route path="/community" element={<CommunityFinalDark />}> */}
+          {/* <Route path="/community" element={<CommunityFinal />}> */}
           <Route path=":postId" element={<SharedCommunityPost />}></Route>
         </Route>
         <Route path="/schedule/:id/:userEmail" element={<Schedule />}></Route>
@@ -242,7 +265,8 @@ function App() {
 
         <Route path="/esop" element={<ESOP />}></Route>
         <Route path="/esop-slides" element={<ESOP_Slides />}></Route>
-        <Route path="/idea-validation" element={<IdeaValidation />}></Route>
+        {/* <Route path="/idea-validation" element={<IdeaValidation />}></Route> */}
+        <Route path="/idea-validation" element={<CourcePageTesting/>}></Route>
         <Route path="/idea-validation-slides" element={<IV_Slides />}></Route>
         <Route
           path="/fundraising-and-means"
@@ -291,7 +315,8 @@ function App() {
           path="/documentTemplates/:id"
           element={<DocumentTemplatesViewer />}
         ></Route>
-        <Route path="/start-up" element={<CheckYourScore />}></Route>
+        {/* <Route path="/start-up" element={<CheckYourScore />}></Route> */}
+        <Route path="/start-up" element={<CheckYourScoreTesting />}></Route>
         <Route
           path="/newcourses/EquityAndEverything"
           element={<EquityAndEverythingg />}
@@ -320,6 +345,16 @@ function App() {
         <Route path="/upgrade" element={<Upgrade />} />
         <Route path="/messages" element={<Chat />}></Route>
         <Route path="/dummy_test" element={<DummyTest />}></Route>
+        <Route path="/discover" element={<Discover />}></Route>
+        <Route path="/discover/featured" element={<Featured/>}></Route>
+        <Route path="/discover/accounting" element={<Accounting/>}></Route>
+        <Route path="/discover/business" element={<Business/>}></Route>
+        <Route path="/discover/consulting" element={<Consulting/>}></Route>
+        <Route path="/discover/gaming" element={<Gaming/>}></Route>
+        <Route path="/discover/design" element={<Design/>}></Route>
+        <Route path="/discover/enterpreneurship" element={<Enterpreneurship/>}></Route>
+        <Route path="/discover/finance" element={<Finance/>}></Route>
+        <Route path="/discover/healthcare" element={<Healthcare/>}></Route>
       </Routes>
     </>
   );
